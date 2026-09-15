@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 12 - MXN a USD</title>
+</head>
+<body>
+    <h1>Conversor de Pesos (MXN) a Dólares (USD)</h1>
+    <label for="mxn">Cantidad en MXN:</label>
+    <input type="number" id="mxn" placeholder="Ej. 500">
+    <button onclick="convertir()">Convertir</button>
+    <br><br>
+    <label for="resultado">Resultado:</label>
+    <input type="text" id="resultado" readonly>
+
+    <script>
+        function convertir() {
+            const val = document.getElementById('mxn').value;
+            if (val === "" || isNaN(val) || parseFloat(val) <= 0) {
+                alert("Ingresa un número válido y mayor a cero.");
+                return;
+            }
+            const mxn = parseFloat(val);
+            const tasa = 0.055;
+            const usd = mxn * tasa;
+            document.getElementById('resultado').value = usd.toFixed(2) + " USD";
+        }
+    </script>
+</body>
+</html>

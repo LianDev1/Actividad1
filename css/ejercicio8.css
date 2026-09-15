@@ -1,0 +1,66 @@
+/*Estilos generales*/
+body{
+    font-family: 'segoe ui', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+.contenedor{
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/*Estilos para tabla*/
+
+.horario {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.horario th, .horario td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+.horario tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/*Clases especiales*/
+
+.laboratorio {
+    background-color: #e3f2fd;
+    font-weight: bold;
+}
+
+.proyecto {
+    background-color: #fff8e1;
+    font-weight: #e65100;
+}
+
+.requisito {
+    font-size: 14px;
+    color: #27ae60;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.notas {
+    text-align: center;
+    font-style: italic;
+    color: #7f8c8d;
+}

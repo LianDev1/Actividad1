@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 14 - Operaciones con Arreglos</title>
+</head>
+<body>
+    <h1>Cálculo con Arreglos en JavaScript</h1>
+    <label for="entrada">Ingresa números separados por coma:</label><br>
+    <input type="text" id="entrada" placeholder="Ej. 10, 20, 30, 40, 50"><br><br>
+    <button onclick="calcular()">Calcular</button>
+    <br><br>
+
+    <label for="mayor">Número Mayor:</label>
+    <input type="text" id="mayor" readonly><br><br>
+
+    <label for="menor">Número Menor:</label>
+    <input type="text" id="menor" readonly><br><br>
+
+    <label for="promedio">Promedio:</label>
+    <input type="text" id="promedio" readonly>
+
+    <script>
+        function calcular() {
+            const texto = document.getElementById('entrada').value.trim();
+            if (!texto) {
+                alert("Ingresa números válidos.");
+                return;
+            }
+
+            const arreglo = texto.split(',').map(n => parseFloat(n.trim()));
+            if (arreglo.some(isNaN)) {
+                alert("Asegúrate de ingresar solo números separados por comas.");
+                return;
+            }
+
+            const mayor = Math.max(...arreglo);
+            const menor = Math.min(...arreglo);
+            const suma = arreglo.reduce((acc, val) => acc + val, 0);
+            const promedio = suma / arreglo.length;
+
+            document.getElementById('mayor').value = mayor;
+            document.getElementById('menor').value = menor;
+            document.getElementById('promedio').value = promedio.toFixed(2);
+        }
+    </script>
+</body>
+</html>

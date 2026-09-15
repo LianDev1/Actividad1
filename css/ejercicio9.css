@@ -1,0 +1,94 @@
+:root {
+    --color-primario: #927dc1;
+    --color-secundario: #4cc9f0;
+    --color-fondo: #f8f9fa;
+    --color-texto: #2b2d42;
+    --color-borde: #e9ecef;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-fondo); /* Fondo gris claro */
+    color: var(--color-texto);
+    line-height: 1.6;
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center;     /* Centrado vertical */
+    min-height: 100vh; 
+    padding: 20px;
+}
+
+.contenedor-formulario {
+    width: 100%;
+    max-width: 650px; /* Ancho máximo de la tarjeta */
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Sombra suave */
+}
+
+h1 {
+    font-size: 28px;
+    color: var(--color-primario);
+    margin-bottom: 8px;
+}
+
+.subtitulo {
+    color: #6c757d;
+    margin-bottom: 30px;
+}
+
+.grupo-formulario {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    transition: all 0.3s;
+    font-family: inherit;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--color-secundario);
+    outline: none;
+    box-shadow: 0 0 3px rgba(76, 201, 240, 0.2);
+}
+
+.grupo-doble {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.boton-enviar {
+    background-color: var(--color-primario);
+    color: #fff;
+    padding: 12px 20px; /* Un poco más pequeño */
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: inline-block; 
+    width: auto;
+}
+
+.boton-enviar:hover {
+    background-color: #2a0880;
+}
