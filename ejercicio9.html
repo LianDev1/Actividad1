@@ -1,146 +1,29 @@
+<!-- Ejercicio 9 explica como hacer referencia a los estilos, en un documento externo, mediante elementos, id, clases, mediante una explicación en comentarios y ejemplos-->
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto | DevSolutions</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- CSS directamente aquí, sin archivo externo -->
-    <style>
-        :root {
-            --color-primario: #927dc1;
-            --color-secundario: #4cc9f0;
-            --color-fondo: #f8f9fa;
-            --color-texto: #2b2d42;
-            --color-borde: #e9ecef;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f0f2f5; /* Fondo gris claro para que resalte el panel */
-            color: var(--color-texto);
-            line-height: 1.6;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        /* ESTE ES EL PANEL BLANCO */
-        .contenedor-formulario {
-            width: 100%;
-            max-width: 650px;
-            background-color: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); /* Sombra para que se vea el panel */
-        }
-
-        h1 {
-            font-size: 28px;
-            color: var(--color-primario);
-            margin-bottom: 8px;
-        }
-
-        .subtitulo {
-            color: #6c757d;
-            margin-bottom: 30px;
-        }
-
-        .grupo-formulario {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            font-size: 15px;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid var(--color-borde);
-            border-radius: 8px;
-            transition: all 0.3s;
-            font-family: inherit;
-            font-size: 14px;
-        }
-
-        input:focus, textarea:focus {
-            border-color: var(--color-secundario);
-            outline: none;
-            box-shadow: 0 0 3px rgba(76, 201, 240, 0.2);
-        }
-
-        .grupo-doble {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .boton-enviar {
-            background-color: var(--color-primario);
-            color: #fff;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.3s ease;
-            display: inline-block;
-            width: auto;
-            font-size: 14px;
-        }
-
-        .boton-enviar:hover {
-            background-color: #2a0880;
-        }
-    </style>
+    <title>Ejercicio 9</title>
+    <!-- 2. Referencia a estilos en un documento externo -->
+    <link rel="stylesheet" href="css/ejercicio9.css">
 </head>
 
 <body>
-    <div class="contenedor-formulario">
-        <h1>Contáctanos</h1>
-        <p class="subtitulo">¿Tienes dudas? Escríbenos y te responderemos en 24h.</p>
-        
-        <form class="formulario">
-            <div class="grupo-formulario">
-                <label for="nombre">Nombre completo</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Ej: Ana Pérez" required>
-            </div>
+    <!-- 3. Hacer referencia a los estilos mediante elementos -->
+    <h1>Ejercicio 9</h1>
+    <p>Ejercicio 9</p>
+    <a href="#">Enlace</a>
+    <img src="" alt="">
+    <button>Boton</button>
 
-            <div class="grupo-doble">
-                <div class="grupo-formulario">
-                    <label for="correo">Email</label>
-                    <input type="email" id="correo" name="correo" placeholder="ana@ejemplo.com" required>
-                </div>
-                <div class="grupo-formulario">
-                    <label for="telefono">Teléfono (opcional)</label>
-                    <input type="tel" id="telefono" name="telefono" placeholder="+52 55 1234 5678">
-                </div>
-            </div>
+    <!-- 4. Hacer referencia a los estilos mediante id -->
+    <div id="id1"></div>
 
-            <div class="grupo-formulario">
-                <label for="mensaje">Mensaje</label>
-                <textarea id="mensaje" name="mensaje" placeholder="Describe tu consulta..." required></textarea>
-            </div>
-
-            <button type="submit" class="boton-enviar">
-                Enviar mensaje <span>→</span>
-            </button>
-        </form>
-    </div>
+    <!-- 5. Hacer referencia a los estilos mediante clases -->
+    <div class="class1"></div>
+    <div class="class2"></div>
 </body>
 
 </html>
