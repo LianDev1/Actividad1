@@ -1,29 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <title>Ejecicio 8</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8 - Formulario con Grid</title>
+    <link rel="stylesheet" href="css/ejercicio8.css">
 </head>
 <body>
-    <div>
-        <h1>Titulo</h1>
-        <p>Parrafo</p>
-        <a href="#">Enlace</a>
-        <img src="" alt="">
-        <button>Boton</button>
-    </div>
-    <div>
-        <!--Multiples DIV-->
-    </div>
-    <div>
-
-    </div>
-    <div>
-        <h2>Seccion 1</h2>
-        <p>Contenido de la selecion</p>
-    </div>
-    <div>
-        <h2>Seccion 2</h2>
-        <p>Contenido de la seleccion</p>
-    </div>
+    <form class="grid-form">
+        <h2>Registro de Usuario</h2>
+        
+        <label for="nombre">Nombre Completo:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono">
+        
+        <div class="full-width">
+            <button type="submit">Enviar Registro</button>
+        </div>
+    </form>
 </body>
 </html>

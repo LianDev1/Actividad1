@@ -1,41 +1,24 @@
-table {
-    width: 80%;
-    border-collapse: collapse;
-    margin: 25px 0;
-    font-family: sans-serif;
-    min-width: 400px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-}
-
-th, td {
-    padding: 12px 15px;
-    border-bottom: 1px solid #dddddd;
-}
-
-/* Encabezados */
-th {
-    background-color: #009879;
-    color: #ffffff;
-    text-align: left;
-}
-
-tbody tr:nth-of-type(even) {
+body {
+    font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
     background-color: #f9f9f9;
 }
 
-tbody tr:hover {
-    background-color: #f3f3f3;
+.contenedor {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    max-width: 500px;
+    margin: 0 auto;
+    border: 1px solid #e0e0e0;
 }
 
-tfoot {
-    background-color: #009879;
-    color: #ffffff;
-    text-align: center;
+.lista-principal > li {
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
-caption {
-    caption-side: bottom;
-    margin-top: 10px;
-    font-style: italic;
-    color: #666;
+.sublista {
+    font-weight: normal;
+    margin-top: 5px;
 }

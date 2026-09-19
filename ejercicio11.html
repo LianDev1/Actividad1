@@ -2,29 +2,27 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 11 - Km a Millas</title>
+    <title>Ejercicio 11 - Kilómetros a Millas</title>
 </head>
 <body>
-    <h1>Conversor de Kilómetros a Millas</h1>
-    <label for="km">Distancia en Km:</label>
-    <input type="number" id="km" placeholder="Ej. 10">
-    <button onclick="convertir()">Convertir</button>
-    <br><br>
-    <label for="resultado">Resultado:</label>
-    <input type="text" id="resultado" readonly>
+    <h2>Conversor de Kilómetros a Millas</h2>
+    <input type="number" id="km" placeholder="Ingrese kilómetros">
+    <button id="btnConvertir">Convertir</button>
+    <p id="resultado"></p>
 
     <script>
-        function convertir() {
-            const val = document.getElementById('km').value;
-            if (val === "" || isNaN(val)) {
-                alert("Por favor, ingresa un valor numérico.");
+        document.getElementById('btnConvertir').addEventListener('click', () => {
+            const km = parseFloat(document.getElementById('km').value);
+            const res = document.getElementById('resultado');
+            
+            if (isNaN(km) || km < 0) {
+                res.textContent = 'Ingrese un número válido mayor o igual a cero.';
                 return;
             }
-            const km = parseFloat(val);
+            
             const millas = km * 0.621371;
-            document.getElementById('resultado').value = millas.toFixed(5) + " Millas";
-        }
+            res.textContent = `${km} km equivalen a ${millas.toFixed(2)} millas.`;
+        });
     </script>
 </body>
 </html>

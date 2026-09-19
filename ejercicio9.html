@@ -1,29 +1,23 @@
-<!-- Ejercicio 9 explica como hacer referencia a los estilos, en un documento externo, mediante elementos, id, clases, mediante una explicación en comentarios y ejemplos-->
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 9</title>
-    <!-- 2. Referencia a estilos en un documento externo -->
+    <title>Ejercicio 9 - Variables CSS</title>
     <link rel="stylesheet" href="css/ejercicio9.css">
 </head>
-
 <body>
-    <!-- 3. Hacer referencia a los estilos mediante elementos -->
-    <h1>Ejercicio 9</h1>
-    <p>Ejercicio 9</p>
-    <a href="#">Enlace</a>
-    <img src="" alt="">
-    <button>Boton</button>
-
-    <!-- 4. Hacer referencia a los estilos mediante id -->
-    <div id="id1"></div>
-
-    <!-- 5. Hacer referencia a los estilos mediante clases -->
-    <div class="class1"></div>
-    <div class="class2"></div>
+    <div class="formulario-card">
+        <h2>Formulario Estilizado con Variables</h2>
+        <div class="grupo-campo">
+            <label for="usuario">Usuario:</label>
+            <input type="text" id="usuario" placeholder="Ingrese usuario">
+        </div>
+        <div class="grupo-campo">
+            <label for="clave">Contraseña:</label>
+            <input type="password" id="clave" placeholder="••••••••">
+        </div>
+        <button class="btn-primario">Iniciar Sesión</button>
+    </div>
 </body>
-
 </html>

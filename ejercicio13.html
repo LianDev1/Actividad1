@@ -2,28 +2,27 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 14 - Validación de Formulario</title>
+    <title>Ejercicio 13 - Verificación para Votar</title>
 </head>
 <body>
-    <h1>Validación de Formulario</h1>
-    <label for="edad">Ingresa tu edad:</label>
-    <input type="number" id="edad" placeholder="Ej. 20">
-    <button onclick="verificar()">Verificar</button>
-    <br><br>
-    <label for="resultado">Estatus:</label>
-    <input type="text" id="resultado" readonly>
+    <h2>Verificación de Edad para Votar</h2>
+    <input type="number" id="edad" placeholder="Ingrese su edad">
+    <button id="btnVerificar">Verificar</button>
+    <p id="mensaje"></p>
 
     <script>
-        function verificar() {
-            const val = document.getElementById('edad').value;
-            if (val === "" || isNaN(val) || parseInt(val) < 0) {
-                alert("Por favor, ingresa una edad válida.");
-                return;
+        document.getElementById('btnVerificar').addEventListener('click', () => {
+            const edad = parseInt(document.getElementById('edad').value);
+            const mensaje = document.getElementById('mensaje');
+
+            if (isNaN(edad) || edad < 0) {
+                mensaje.textContent = 'Ingrese una edad válida.';
+            } else if (edad >= 18) {
+                mensaje.textContent = 'Eres elegible para votar.';
+            } else {
+                mensaje.textContent = 'No tienes la edad suficiente para votar.';
             }
-            const edad = parseInt(val);
-            document.getElementById('resultado').value = edad >= 18 ? "Puedes votar" : "No puedes votar";
-        }
+        });
     </script>
 </body>
 </html>

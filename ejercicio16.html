@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 16 - Calculadora con Funciones Flecha</title>
+    <!-- Librería SweetAlert2 requerida por la práctica -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <h2>Calculadora Básica</h2>
+    <input type="number" id="num1" placeholder="Número 1">
+    <input type="number" id="num2" placeholder="Número 2">
+    <br><br>
+    <button id="btnSumar">+</button>
+    <button id="btnRestar">-</button>
+    <button id="btnMultiplicar">*</button>
+    <button id="btnDividir">/</button>
+
+    <h3 id="resCalc">Resultado: -</h3>
+
+    <script>
+        const sumar = (a, b) => a + b;
+        const restar = (a, b) => a - b;
+        const multiplicar = (a, b) => a * b;
+        const dividir = (a, b) => b === 0 ? null : a / b;
+
+        const ejecutarOp = (operacion) => {
+            const n1 = parseFloat(document.getElementById('num1').value);
+            const n2 = parseFloat(document.getElementById('num2').value);
+
+            if (isNaN(n1) || isNaN(n2)) {
+                Swal.fire({ icon: 'error', title: 'Error', text: 'Por favor ingrese ambos números.' });
+                return;
+            }
+
+            const res = operacion(n1, n2);
+            if (res === null) {
+                Swal.fire({ icon: 'error', title: 'Error', text: 'No se puede dividir entre cero.' });
+                return;
+            }
+
+            document.getElementById('resCalc').innerText = `Resultado: ${res}`;
+        };
+
+        document.getElementById('btnSumar').addEventListener('click', () => ejecutarOp(sumar));
+        document.getElementById('btnRestar').addEventListener('click', () => ejecutarOp(restar));
+        document.getElementById('btnMultiplicar').addEventListener('click', () => ejecutarOp(multiplicar));
+        document.getElementById('btnDividir').addEventListener('click', () => ejecutarOp(dividir));
+    </script>
+</body>
+</html>

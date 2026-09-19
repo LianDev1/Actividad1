@@ -1,11 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ejercicio 15 - Estadísticas con Objetos</title>
 </head>
 <body>
-    
+    <h2>Estadísticas de Estudiantes</h2>
+    <button id="btnProcesar">Analizar Datos</button>
+    <div id="reporte"></div>
+
+    <script>
+        const estudiantes = [
+            { nombre: "Ana", calificacion: 95 },
+            { nombre: "Carlos", calificacion: 82 },
+            { nombre: "Elena", calificacion: 78 },
+            { nombre: "David", calificacion: 90 }
+        ];
+
+        document.getElementById('btnProcesar').addEventListener('click', () => {
+            const total = estudiantes.reduce((acc, e) => acc + e.calificacion, 0);
+            const promedio = total / estudiantes.length;
+            
+            const masAlta = estudiantes.reduce((max, e) => e.calificacion > max.calificacion ? e : max, estudiantes[0]);
+            const masBaja = estudiantes.reduce((min, e) => e.calificacion < min.calificacion ? e : min, estudiantes[0]);
+
+            document.getElementById('reporte').innerHTML = `
+                <p><strong>Promedio general:</strong> ${promedio.toFixed(2)}</p>
+                <p><strong>Calificación más alta:</strong> ${masAlta.nombre} (${masAlta.calificacion})</p>
+                <p><strong>Calificación más baja:</strong> ${masBaja.nombre} (${masBaja.calificacion})</p>
+            `;
+        });
+    </script>
 </body>
 </html>

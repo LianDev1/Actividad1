@@ -1,28 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 3</title>
-    <style>
-        body {
-            background-color: lightblue;
-        }
-    </style>
+    <title>Ejercicio 3 - Hipervínculos</title>
+    <link rel="stylesheet" href="css/ejercicio3.css">
 </head>
-
 <body>
-    <h1>Ejercicio 3</h1>
-    <p>Este es el contenido del ejercicio 3.</p>
-    <a href ="https://www.google.com">Ir a Google</a>
-
-    <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_120x44dp.png" alt="Google logo with blue, red, yellow, and green letters spelling out Google">
-
-    <img src="img/nasa-ErjNGXc9mqA-unsplash.jpg" alt="Earth from space showing continents, clouds, and oceans with a dark starry background, inspiring sense of wonder and vastness of space" width="500">
-
-    <!-- Agrega un enlace a la página de la NASA -->
+    <div class="contenedor">
+        <h2>Ejemplos de Enlaces</h2>
         
-    <a href="http://www.itoaxaca.edu.mx/" target="_blank"><img src="img/nasa-ErjNGXc9mqA-unsplash.jpg" alt="Earth from space showing continents, clouds, and oceans with a dark starry background, inspiring sense of wonder and vastness of space. Click to visit NASA website" width="500"></a>
-    
+        <p>
+            <strong>Enlace Externo:</strong> 
+            <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">Ir a Google</a>
+        </p>
+        
+        <p>
+            <strong>Enlace a Sección Interna:</strong> 
+            <a href="#seccion-info">Saltar a la Sección de Información</a>
+        </p>
+        
+        <p>
+            <strong>Enlace de Correo:</strong> 
+            <a href="mailto:contacto@ejemplo.com">Enviar Correo Electrónico</a>
+        </p>
+
+        <div id="seccion-info" class="seccion">
+            <h3>Sección de Información</h3>
+            <p>Has llegado a la sección destino mediante un ancla interna.</p>
+        </div>
+    </div>
 </body>
 </html>

@@ -1,82 +1,60 @@
-/* Ejercicio 9: Estilos en Documento Externo */
-
-/* 1. Estilos por Elemento (h1, p, a, img, button) */
-/* Estos estilos se aplican a TODAS las instancias de estos elementos en el HTML */
-
-h1 {
-    color: #2c3e50; /* Azul oscuro */
-    text-decoration: underline;
-    border-bottom: 2px solid #3498db;
-    padding-bottom: 10px;
+:root {
+    --primary-color: #6c5ce7;
+    --primary-hover: #5a4bcf;
+    --bg-color: #f0f3f8;
+    --card-bg: #ffffff;
+    --text-color: #2d3436;
+    --border-radius: 6px;
+    --padding-base: 10px 14px;
 }
 
-p {
-    color: #7f8c8d; /* Gris azulado */
-    line-height: 1.6;
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
-a {
-    color: #e74c3c; /* Rojo */
-    text-decoration: none;
+.formulario-card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    width: 320px;
 }
 
-/* Pseudo-clases: son estados de los elementos, los cuales cambian cuando el usuario interactúa con ellos */
-/* Por ejemplo, cuando el usuario pone el cursor sobre el enlace, este cambia a underline */
-a:hover {
-    text-decoration: underline;
+.grupo-campo {
+    margin-bottom: 15px;
 }
 
-img {
-    border: 3px solid #bdc3c7;
-    border-radius: 8px;
-    margin-top: 15px;
+label {
+    display: block;
+    margin-bottom: 5px;
 }
 
-button {
-    background-color: #3498db; /* Azul */
+input {
+    width: 100%;
+    padding: var(--padding-base);
+    border: 1px solid #dfe6e9;
+    border-radius: var(--border-radius);
+    box-sizing: border-box;
+}
+
+.btn-primario {
+    width: 100%;
+    padding: var(--padding-base);
+    background-color: var(--primary-color);
     color: white;
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     cursor: pointer;
     font-weight: bold;
-    margin-top: 15px;
 }
 
-/* Pseudo-clases: son estados de los elementos, los cuales cambian cuando el usuario interactúa con ellos */
-/* Por ejemplo, cuando el usuario pone el cursor sobre el botón, este cambia a un color diferente */
-button:hover {
-    background-color: #2980b9;
-}
-
-/* 2. Estilos por ID */
-/* Solo se aplica al elemento con id="id1" */
-#id1 {
-    background-color: #e8f6f3; /* Verde menta muy claro */
-    border: 2px dashed #16a085; /* Verde menta */
-    padding: 20px;
-    margin-top: 20px;
-    font-weight: bold;
-    text-align: center;
-}
-
-/* 3. Estilos por Clase (.class1 y .class2) */
-/* Se aplican a CUALQUIER elemento que tenga esta clase */
-.class1 {
-    background-color: #fdf5e6; /* Beige */
-    border: 3px solid #d35400; /* Naranja */
-    padding: 15px;
-    margin: 10px 0;
-    color: #d35400;
-    font-style: italic;
-}
-
-.class2 {
-    background-color: #fbe9e7; /* Rojo muy claro */
-    border: 3px solid #c0392b; /* Rojo oscuro */
-    padding: 15px;
-    margin: 10px 0;
-    color: #c0392b;
-    font-weight: bold;
-    text-transform: uppercase;
+.btn-primario:hover {
+    background-color: var(--primary-hover);
 }
