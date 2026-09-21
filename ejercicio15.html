@@ -2,34 +2,90 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Ejercicio 15 - Estadísticas con Objetos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 15 - Objetos</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 40px 20px;
+            color: #333;
+        }
+
+        .contenedor {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 22px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[readonly] {
+            background-color: #eee;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
 </head>
 <body>
-    <h2>Estadísticas de Estudiantes</h2>
-    <button id="btnProcesar">Analizar Datos</button>
-    <div id="reporte"></div>
+    <div class="contenedor">
+        <h1>Calificaciones de Estudiantes</h1>
 
-    <script>
-        const estudiantes = [
-            { nombre: "Ana", calificacion: 95 },
-            { nombre: "Carlos", calificacion: 82 },
-            { nombre: "Elena", calificacion: 78 },
-            { nombre: "David", calificacion: 90 }
-        ];
+        <label for="nombre">Nombre del estudiante</label>
+        <input type="text" id="nombre" placeholder="Ej: Juan">
 
-        document.getElementById('btnProcesar').addEventListener('click', () => {
-            const total = estudiantes.reduce((acc, e) => acc + e.calificacion, 0);
-            const promedio = total / estudiantes.length;
-            
-            const masAlta = estudiantes.reduce((max, e) => e.calificacion > max.calificacion ? e : max, estudiantes[0]);
-            const masBaja = estudiantes.reduce((min, e) => e.calificacion < min.calificacion ? e : min, estudiantes[0]);
+        <label for="calificacion">Calificación</label>
+        <input type="text" id="calificacion" placeholder="Ej: 85">
 
-            document.getElementById('reporte').innerHTML = `
-                <p><strong>Promedio general:</strong> ${promedio.toFixed(2)}</p>
-                <p><strong>Calificación más alta:</strong> ${masAlta.nombre} (${masAlta.calificacion})</p>
-                <p><strong>Calificación más baja:</strong> ${masBaja.nombre} (${masBaja.calificacion})</p>
-            `;
-        });
-    </script>
+        <button type="button" id="btnAgregar">Agregar estudiante</button>
+        <button type="button" id="btnCalcular">Calcular</button>
+
+        <label for="promedio">Calificación promedio</label>
+        <input type="text" id="promedio" readonly>
+
+        <label for="mejor">Estudiante con la calificación más alta</label>
+        <input type="text" id="mejor" readonly>
+
+        <label for="peor">Estudiante con la calificación más baja</label>
+        <input type="text" id="peor" readonly>
+    </div>
+
+    <script src="js/ejercicio15.js"></script>
 </body>
 </html>

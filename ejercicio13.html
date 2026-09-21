@@ -2,27 +2,80 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Ejercicio 13 - Verificación para Votar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 13 - ¿Puedes votar?</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 40px 20px;
+            color: #333;
+        }
+
+        .contenedor {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 22px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[readonly] {
+            background-color: #eee;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
 </head>
 <body>
-    <h2>Verificación de Edad para Votar</h2>
-    <input type="number" id="edad" placeholder="Ingrese su edad">
-    <button id="btnVerificar">Verificar</button>
-    <p id="mensaje"></p>
+    <div class="contenedor">
+        <h1>Verificador de Edad para Votar</h1>
 
-    <script>
-        document.getElementById('btnVerificar').addEventListener('click', () => {
-            const edad = parseInt(document.getElementById('edad').value);
-            const mensaje = document.getElementById('mensaje');
+        <label for="edad">Edad</label>
+        <input type="text" id="edad" placeholder="Ej: 20">
 
-            if (isNaN(edad) || edad < 0) {
-                mensaje.textContent = 'Ingrese una edad válida.';
-            } else if (edad >= 18) {
-                mensaje.textContent = 'Eres elegible para votar.';
-            } else {
-                mensaje.textContent = 'No tienes la edad suficiente para votar.';
-            }
-        });
-    </script>
+        <button type="button" id="btnVerificar">Verificar</button>
+
+        <label for="resultado">Resultado</label>
+        <input type="text" id="resultado" readonly>
+    </div>
+
+    <script src="js/ejercicio13.js"></script>
 </body>
 </html>

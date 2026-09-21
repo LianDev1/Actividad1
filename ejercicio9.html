@@ -3,21 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 9 - Variables CSS</title>
+    <title>Contacto | DevSolutions</title>
     <link rel="stylesheet" href="css/ejercicio9.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="formulario-card">
-        <h2>Formulario Estilizado con Variables</h2>
-        <div class="grupo-campo">
-            <label for="usuario">Usuario:</label>
-            <input type="text" id="usuario" placeholder="Ingrese usuario">
-        </div>
-        <div class="grupo-campo">
-            <label for="clave">Contraseña:</label>
-            <input type="password" id="clave" placeholder="••••••••">
-        </div>
-        <button class="btn-primario">Iniciar Sesión</button>
+    <div class="contenedor-formulario">
+        <h1>Contáctanos</h1>
+        <p class="subtitulo">¿Tienes dudas? Escríbenos y te responderemos en 24h.</p>
+
+        <form class="formulario">
+            <!-- Grupo 1: Datos básicos -->
+            <div class="grupo-formulario">
+                <label for="nombre">Nombre completo</label>
+                <input type="text" id="nombre" placeholder="Ej: Ana Pérez" required>
+            </div>
+
+            <!-- Grupo 2: Email y teléfono -->
+            <div class="grupo-doble">
+                <div class="grupo-formulario">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="ana@ejemplo.com" required>
+                </div>
+                <div class="grupo-formulario">
+                    <label for="telefono">Teléfono <span>(opcional)</span></label>
+                    <input type="tel" id="telefono" placeholder="+52 55 1234 5678">
+                </div>
+            </div>
+
+            <!-- Grupo 3: Mensaje -->
+            <div class="grupo-formulario">
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" rows="5" placeholder="Describe tu consulta..." required></textarea>
+            </div>
+
+            <!-- Botón -->
+            <button type="submit" class="boton-enviar">
+                Enviar mensaje <span>&rarr;</span>
+            </button>
+        </form>
     </div>
 </body>
 </html>

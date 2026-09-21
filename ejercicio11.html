@@ -2,27 +2,80 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 11 - Kilómetros a Millas</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 40px 20px;
+            color: #333;
+        }
+
+        .contenedor {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 22px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[readonly] {
+            background-color: #eee;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
 </head>
 <body>
-    <h2>Conversor de Kilómetros a Millas</h2>
-    <input type="number" id="km" placeholder="Ingrese kilómetros">
-    <button id="btnConvertir">Convertir</button>
-    <p id="resultado"></p>
+    <div class="contenedor">
+        <h1>Convertidor de Kilómetros a Millas</h1>
 
-    <script>
-        document.getElementById('btnConvertir').addEventListener('click', () => {
-            const km = parseFloat(document.getElementById('km').value);
-            const res = document.getElementById('resultado');
-            
-            if (isNaN(km) || km < 0) {
-                res.textContent = 'Ingrese un número válido mayor o igual a cero.';
-                return;
-            }
-            
-            const millas = km * 0.621371;
-            res.textContent = `${km} km equivalen a ${millas.toFixed(2)} millas.`;
-        });
-    </script>
+        <label for="kilometros">Distancia en kilómetros</label>
+        <input type="text" id="kilometros" placeholder="Ej: 10">
+
+        <button type="button" id="btnConvertir">Convertir</button>
+
+        <label for="millas">Distancia en millas</label>
+        <input type="text" id="millas" readonly>
+    </div>
+
+    <script src="js/ejercicio11.js"></script>
 </body>
 </html>

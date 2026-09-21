@@ -2,29 +2,80 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Ejercicio 12 - MXN a USD</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 12 - Pesos a Dólares</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 40px 20px;
+            color: #333;
+        }
+
+        .contenedor {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 22px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[readonly] {
+            background-color: #eee;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
 </head>
 <body>
-    <h2>Conversor de Pesos Mexicanos a Dólares</h2>
-    <input type="number" id="mxn" placeholder="Monto en MXN">
-    <button id="btnCalcular">Convertir a USD</button>
-    <p id="salida"></p>
+    <div class="contenedor">
+        <h1>Convertidor de MXN a USD</h1>
 
-    <script>
-        const TASA_CAMBIO = 0.050; // Tasa fija de ejemplo
+        <label for="pesos">Cantidad en pesos mexicanos (MXN)</label>
+        <input type="text" id="pesos" placeholder="Ej: 500">
 
-        document.getElementById('btnCalcular').addEventListener('click', () => {
-            const mxn = parseFloat(document.getElementById('mxn').value);
-            const salida = document.getElementById('salida');
+        <button type="button" id="btnConvertir">Convertir</button>
 
-            if (isNaN(mxn) || mxn < 0) {
-                salida.textContent = 'Ingrese un monto válido.';
-                return;
-            }
+        <label for="dolares">Cantidad en dólares (USD)</label>
+        <input type="text" id="dolares" readonly>
+    </div>
 
-            const usd = mxn * TASA_CAMBIO;
-            salida.textContent = `$${mxn.toFixed(2)} MXN = $${usd.toFixed(2)} USD`;
-        });
-    </script>
+    <script src="js/ejercicio12.js"></script>
 </body>
 </html>

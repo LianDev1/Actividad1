@@ -1,55 +1,70 @@
+/* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    padding: 40px;
-    background-color: #f4f4f4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+    color: #333;
 }
 
-.grid-form {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 15px;
-    background: white;
-    padding: 25px;
-    border-radius: 8px;
-    max-width: 450px;
+.contenedor {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Estilos para la tabla */
+.horario {
     width: 100%;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-collapse: collapse;
+    margin-bottom: 20px;
 }
 
-.grid-form h2 {
-    grid-column: 1 / -1;
-    margin-top: 0;
+.horario th, .horario td {
+    border: 1px solid #ddd;
+    padding: 12px;
     text-align: center;
 }
 
-.grid-form label {
-    display: flex;
-    align-items: center;
+.horario th {
+    background-color: #3498db;
+    color: white;
     font-weight: bold;
 }
 
-.grid-form input {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.horario tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
 }
 
-.full-width {
-    grid-column: 1 / -1;
-    text-align: right;
+/* Clases especiales */
+.laboratorio {
+    background-color: #e3f2fd;
+    font-weight: bold;
 }
 
-button {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
+.proyecto {
+    background-color: #fff8e1;
+    color: #e65100;
 }
 
-button:hover {
-    background-color: #218838;
+.requisito {
+    font-size: 14px;
+    color: #27ae60;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.notas {
+    text-align: center;
+    font-style: italic;
+    color: #7f8c8d;
 }

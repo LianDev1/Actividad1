@@ -2,67 +2,94 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Ejercicio 17 - Gestor de Tareas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 17 - Gestión de Tareas</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 40px 20px;
+            color: #333;
+        }
+
+        .contenedor {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 22px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        #agregarBtn {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        #listaTareas {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .tarea {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px;
+            background-color: #f0f0f0;
+            margin-bottom: 5px;
+            border-radius: 4px;
+        }
+
+        .tarea button {
+            background-color: #e74c3c;
+        }
+
+        .tarea button:hover {
+            background-color: #c0392b;
+        }
+    </style>
 </head>
 <body>
-    <h2>Gestor de Tareas</h2>
-    <input type="text" id="nuevaTarea" placeholder="Nueva tarea">
-    <button id="btnAgregar">Agregar</button>
-    
-    <ul id="listaTareas"></ul>
+    <div class="contenedor">
+        <h1>Gestión de Tareas Pendientes</h1>
 
-    <script>
-        // Closure para encapsular el estado de las tareas y el LocalStorage
-        const crearGestorTareas = () => {
-            let tareas = JSON.parse(localStorage.getItem('tareas')) || [];
+        <input type="text" id="nuevaTarea" placeholder="Escribe una tarea">
+        <button type="button" id="agregarBtn">Agregar Tarea</button>
 
-            const guardar = () => localStorage.setItem('tareas', JSON.stringify(tareas));
+        <ul id="listaTareas"></ul>
+    </div>
 
-            return {
-                agregar: (texto) => {
-                    tareas.push(texto);
-                    guardar();
-                },
-                eliminar: (index) => {
-                    tareas.splice(index, 1);
-                    guardar();
-                },
-                obtener: () => [...tareas]
-            };
-        };
-
-        const gestor = crearGestorTareas();
-
-        const renderizar = () => {
-            const lista = document.getElementById('listaTareas');
-            lista.innerHTML = '';
-            
-            gestor.obtener().forEach((tarea, index) => {
-                const li = document.createElement('li');
-                li.innerText = tarea + ' ';
-                
-                const btnBorrar = document.createElement('button');
-                btnBorrar.innerText = 'Eliminar';
-                btnBorrar.onclick = () => {
-                    gestor.eliminar(index);
-                    renderizar();
-                };
-
-                li.appendChild(btnBorrar);
-                lista.appendChild(li);
-            });
-        };
-
-        document.getElementById('btnAgregar').addEventListener('click', () => {
-            const input = document.getElementById('nuevaTarea');
-            if (input.value.trim() !== '') {
-                gestor.agregar(input.value.trim());
-                input.value = '';
-                renderizar();
-            }
-        });
-
-        renderizar();
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/ejercicio17.js"></script>
 </body>
 </html>
